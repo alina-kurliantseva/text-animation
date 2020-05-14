@@ -1,0 +1,118 @@
+body {
+  margin: 0px;
+  font-family: 'Noto Serif JP', sans-serif;
+  text-align: center;
+}
+
+#container {
+  color: #1d1d1d;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  /* The 'margin-right: -50%' is needed to compensate the 'left: 50%'.
+  The 'left' rule reduces the available width for the element by 50%.
+  The renderer will thus try to make lines that are no longer than half the width of the container.
+  By saying that the right margin of the element is further to the right by that same amount,
+  the maximum line length is again the same as the container's width.*/
+  transform: translate(-50%, -50%);
+}
+
+#quote {
+  text-transform: none;
+}
+
+q {
+  font-family: 'Pacifico', cursive;
+}
+
+#changing-text {
+  height: 50px;
+  overflow: hidden;
+}
+
+#changing-text>div>div {
+  color: #ffffff;
+  padding: 4px 12px;
+  height: 45px;
+  margin-bottom: 45px;
+  display: inline-block;
+}
+
+#changing-text div:first-child {
+  animation: show 5s linear infinite;
+}
+
+/* The animation lasts for 5 seconds. It then starts over again, and go on forever (infinite). */
+#changing-text div div {
+  background: #0055a4;
+}
+
+#changing-text div:first-child div {
+  background: #f6546a;
+}
+
+#changing-text div:last-child div {
+  background: #008080;
+}
+
+@keyframes show {
+  0% {
+    margin-top: -270px;
+  }
+
+  5% {
+    margin-top: -180px;
+  }
+
+  33% {
+    margin-top: -180px;
+  }
+
+  38% {
+    margin-top: -90px;
+  }
+
+  66% {
+    margin-top: -90px;
+  }
+
+  71% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -270px;
+  }
+}
+
+#footer {
+  position: fixed;
+  bottom: 5%;
+  width: 100%;
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 576px) {
+  #container {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #container {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #container {
+    font-size: 24px;
+  }
+}
